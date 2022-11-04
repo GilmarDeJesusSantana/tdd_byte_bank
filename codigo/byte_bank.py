@@ -21,6 +21,18 @@ class Funcionario:
         ano_atual = date.today().year
         return ano_atual - int(ano_nascimento)
 
+    def sobrenome(self):
+        nome_completo = self._nome.strip()
+        nome_fatiado = nome_completo.split(' ')
+        sobrenome = nome_fatiado[-1]
+        return sobrenome
+
+    def decrescimo(self):
+        sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
+        if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
+            descrescimo = self._salario * 0.1
+            self._salario -= descrescimo
+
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:
