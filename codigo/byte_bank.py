@@ -27,9 +27,12 @@ class Funcionario:
         sobrenome = nome_fatiado[-1]
         return sobrenome
 
-    def decrescimo(self):
+    def _eh_socio(self):
         sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
-        if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
+        return self._salario >= 100000 and (self.sobrenome() in sobrenomes)
+
+    def decrescimo(self):
+        if self._eh_socio():
             descrescimo = self._salario * 0.1
             self._salario -= descrescimo
 
