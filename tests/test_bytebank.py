@@ -62,3 +62,12 @@ class TestClass:
         resultado = funcionario.__str__()
 
         assert  resultado == esperado
+
+    def test_quando_o_nome_e_atribuido_a_variavel_nome(self):
+        entrada = 'Gilmar'
+        esperado = 'Gilmar'
+
+        funcinario = Funcionario(entrada,'01/09/1983',2000)
+        resultado = funcinario.nome
+
+        assert resultado == esperado
