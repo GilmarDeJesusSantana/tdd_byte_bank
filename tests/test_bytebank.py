@@ -53,16 +53,6 @@ class TestClass:
             resultado = funcionario.calcular_bonus()  # When
 
             assert resultado  # Then
-
-    def test_certifica_retorno_str(self):
-        nome, datanascimento, salario = 'Teste', '01/09/1983', 1000
-        esperado = 'Funcionario: (Teste, 01/09/1983 ,1000)'
-
-        funcionario = Funcionario(nome,datanascimento,salario)
-        resultado = funcionario.__str__()
-
-        assert  resultado == esperado
-
     def test_quando_o_nome_e_atribuido_a_variavel_nome(self):
         entrada = 'Gilmar'
         esperado = 'Gilmar'
